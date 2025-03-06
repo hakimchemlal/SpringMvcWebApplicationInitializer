@@ -74,6 +74,7 @@ Si l'application ne démarre pas :
 - Tomcat
 
 ##  Explication
+
 1. DSConfiguration (DispatcherServlet Configuration):
 -Cette classe remplace le traditionnel web.xml
 WebApplicationInitializer est détecté automatiquement par Spring
@@ -83,7 +84,7 @@ Root Context : pour les beans globaux (services, repositories)
 Dispatcher Context : pour les beans MVC (controllers, viewResolver)
 Configure le DispatcherServlet qui gère toutes les requêtes ("/*")
 
-2.AppConfig (Configuration Spring):
+2. AppConfig (Configuration Spring):
 @Configuration : Indique une classe de configuration Spring
 @ComponentScan : Scanne le package spécifié pour trouver les composants
 @EnableWebMvc : Active les fonctionnalités Spring MVC
@@ -122,7 +123,7 @@ ServletContext (Conteneur Web)
 Ce projet est sous licence [MIT](LICENSE)
 
 ## 📫 Contact
-Votre CHEMLAL ABDELHAKIM - [@votretwitter](https://twitter.com/votretwitter) - hakimchemlal0@gmail.com
+Votre CHEMLAL ABDELHAKIM  - hakimchemlal0@gmail.com
 
-Lien du projet : [SpringMvcXml](https://github.com/hakimchemlal/SpringMvcWebApplicationInitializer)
+Lien du projet : [SpringMvcWebApplicationInitializer](https://github.com/hakimchemlal/SpringMvcWebApplicationInitializer)
 ```
