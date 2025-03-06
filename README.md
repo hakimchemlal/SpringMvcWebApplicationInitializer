@@ -73,6 +73,51 @@ Si l'application ne démarre pas :
 - Maven
 - Tomcat
 
+##  Explication
+1. DSConfiguration (DispatcherServlet Configuration):
+-Cette classe remplace le traditionnel web.xml
+WebApplicationInitializer est détecté automatiquement par Spring
+onStartup est appelé au démarrage de l'application
+-Crée deux contextes Spring :
+Root Context : pour les beans globaux (services, repositories)
+Dispatcher Context : pour les beans MVC (controllers, viewResolver)
+Configure le DispatcherServlet qui gère toutes les requêtes ("/*")
+
+2.AppConfig (Configuration Spring):
+@Configuration : Indique une classe de configuration Spring
+@ComponentScan : Scanne le package spécifié pour trouver les composants
+@EnableWebMvc : Active les fonctionnalités Spring MVC
+Les composants configurés :
+
+ViewResolver :
+
+Gère la résolution des vues
+Si controller retourne "home", il cherchera "/WEB-INF/views/home.jsp"
+ResourceHandler :
+
+Gère les ressources statiques (CSS, JS, images)
+URL "/resources/style.css" → fichier physique "/resources/style.css"
+Le flux de travail :
+
+Une requête arrive (ex: "/hello")
+DispatcherServlet la reçoit
+Le controller approprié est trouvé
+La méthode du controller s'exécute
+ViewResolver trouve et renvoie la vue
+Hiérarchie des contextes :
+
+ServletContext (Conteneur Web)
+    │
+    ├── Root Context (Services, Repositories)
+    │      │
+    │      └── Beans globaux
+    │
+    └── Dispatcher Context (Web)
+           │
+           └── Controllers, ViewResolver
+
+
+
 ## 📝 License
 Ce projet est sous licence [MIT](LICENSE)
 
