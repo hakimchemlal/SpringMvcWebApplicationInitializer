@@ -126,4 +126,3 @@ Ce projet est sous licence [MIT](LICENSE)
 Votre CHEMLAL ABDELHAKIM  - hakimchemlal0@gmail.com
 
 Lien du projet : [SpringMvcWebApplicationInitializer](https://github.com/hakimchemlal/SpringMvcWebApplicationInitializer)
-```
